@@ -1,0 +1,76 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the products section of the site/application.
+// -----------------------------------------------------------------------------
+.products-s {
+	padding-top: 60px;
+	.btn-wrapper {
+		text-align: center;
+		margin-bottom: 60px;
+	}
+}
+.products-grid {
+	display: flex;
+	margin: 40px 0 45px;
+	justify-content: space-between;
+	+.btn-wrapper {
+		span {
+			box-shadow: 0 0 7px 4px rgba($text-color, 0.2);
+			display: inline-block;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		flex-wrap: wrap;
+		justify-content: flex-start;
+	}
+	.products-item {
+		padding: 15px 15px 0;
+		border-radius: 2px;
+		border: 1px solid $light-grey;
+		display: flex;
+		align-items: center;
+		justify-content: stretch;
+		flex-direction: column;
+		width: calc(20% - 20px);
+		box-shadow: 0 0px 7px 4px rgba(0,0,0,0.05);
+		.title {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 20px;
+			margin-top: 15px;
+			flex: 1;
+			span {
+				display: block;
+				text-align: center;
+				font-size: 1.6rem;
+			}
+		}
+		&:not(:first-child) {
+			margin-left: 10px; 
+		}
+		&:not(:last-child) {
+			margin-right: 10px; 
+		}
+		.btn-wrapper {
+			margin-bottom: 10px;
+		}
+		@media screen and (max-width: 768px) {
+			width: calc(33.33% - 20px);
+			margin-bottom: 10px;
+			&:first-child {
+				margin-left: 10px;
+			}
+			&:nth-child(4) {
+				display: none;
+			}
+			&:last-child {
+				display: none;
+			}
+		}
+		@media screen and (max-width: 480px) {
+			width: calc(50% - 20px);
+			&:nth-child(4) {
+				display: block;
+			}
+		}
+	}
+}

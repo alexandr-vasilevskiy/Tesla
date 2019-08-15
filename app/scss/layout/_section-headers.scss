@@ -1,0 +1,12 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to section headers of the site/application.
+// -----------------------------------------------------------------------------
+
+.section-header {
+	text-align: center;
+	span {
+		display: block;
+		text-align: center;
+		font-weight: 100;
+	}
+}

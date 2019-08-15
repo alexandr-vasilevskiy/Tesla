@@ -1,0 +1,11 @@
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations, if any.
+// -----------------------------------------------------------------------------
+@import "../abstracts/_mixins";
+
+
+@include font-face("pfdintext", "../fonts/PFDinTextCondPro-Thin/PFDinTextCondPro-Thin", 100);
+@include font-face("pfdintext", "../fonts/PFDinTextCondPro-Light/PFDinTextCondPro-Light", 300);
+@include font-face("pfdintext", "../fonts/PFDinTextCondPro-Regular/PFDinTextCondPro-Regular");
+@include font-face("pfdintext", "../fonts/PFDinTextCondPro-Medium/PFDinTextCondPro-Medium", 500);
+@include font-face("pfdintext", "../fonts/PFDinTextCondPro-Bold/PFDinTextCondPro-Bold", 700);

@@ -1,0 +1,138 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to forms of the site/application.
+// -----------------------------------------------------------------------------
+
+.search-wrapper {
+	position: relative;
+	@media screen and (max-width: 991px) {
+		margin: 15px 60px;
+		width: 100%;
+	}
+	@media screen and (max-width: 480px) {
+		margin: 15px 0;
+		text-align: center;
+	}
+	.search {
+		border-radius: 5px;
+		border: 1px solid rgba(255,255,255,0.3);
+		color: $second-color;
+		width: 100%;
+		background-color: rgba(255,255,255,0.15);
+		padding: 10px;
+		font-family: "pfdintext";
+		outline-color: $brand-color;
+	}
+	&:after {
+		position: absolute;
+		content: '';
+		width: 20px;
+		height: 20px;
+		background: url('../../img/svg/search.svg') center center no-repeat;
+		top: 50%;
+		right: 15px;
+		transform: translateY(-50%);
+		cursor: pointer;
+	}
+}
+.search::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #f6f6f6;
+}
+.search::-moz-placeholder { /* Firefox 19+ */
+  color: #f6f6f6;
+}
+.search:-ms-input-placeholder { /* IE 10+ */
+  color: #f6f6f6;
+}
+.search:-moz-placeholder { /* Firefox 18- */
+  color: #f6f6f6;
+}
+
+
+
+.constructor-s {
+	.input-group {
+		display: flex;
+		flex-direction: column;
+		margin: 0 55px;
+		flex: 1;
+		label {
+			font-size: 1.5rem;
+			font-weight: 200;
+			margin-bottom: 3px;
+		}
+		input {
+			border-radius: 2px;
+			border: 1px solid $text-color;
+			min-height: 40px;
+			padding: 10px;
+			font-size: 1.6rem;
+			font-weight: 200;
+			font-family: $text-font-stack;
+			outline-color: $brand-color;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+
+.divider-block {
+	.forms-group {
+		margin: 0 50px;
+		display: flex;
+		justify-content: space-between;
+		@media screen and (max-width: 640px) {
+			margin: 0 20px;
+		}
+		@media screen and (max-width: 480px) {
+			flex-direction: column;
+		}
+		input {
+			width: 31%;
+			border-radius: 2px;
+			border: 1px solid $text-color;
+			background-color: $second-color;
+			padding: 15px;
+			max-height: 40px;
+			color: $text-color;
+			font-family: $text-font-stack;
+			outline-color: $brand-color;
+			@media screen and (max-width: 480px) {
+				width: 100%;
+				margin-bottom: 10px;
+			}
+		}
+		.btn {
+			outline: none;
+			box-shadow: inset 0 -4px 0 0 #000;
+			padding: 0;
+			background-color: #191928;
+			color: $brand-color;
+			@media screen and (max-width: 480px) {
+				min-height: 40px;
+			}
+			&:hover {
+				color: $second-color;
+			}
+		}
+	}
+}
+.divider-block .forms-group input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: $text-color;
+  font-size: 1.6rem;
+  font-weight: 200;
+}
+.divider-block .forms-group input::-moz-placeholder { /* Firefox 19+ */
+  color: $text-color;
+  font-size: 1.6rem;
+  font-weight: 200;
+}
+.divider-block .forms-group input:-ms-input-placeholder { /* IE 10+ */
+  color: $text-color;
+  font-size: 1.6rem;
+  font-weight: 200;
+}
+.divider-block .forms-group input:-moz-placeholder { /* Firefox 18- */
+  color: $text-color;
+  font-size: 1.6rem;
+  font-weight: 200;
+}

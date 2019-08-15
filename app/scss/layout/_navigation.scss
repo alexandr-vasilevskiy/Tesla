@@ -1,0 +1,218 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to navitagions of the site/application.
+// -----------------------------------------------------------------------------
+
+.header-right-menu {
+	position: relative;
+	display: flex;
+}
+.header-nav {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	width: 100%;
+	height: auto;
+}
+.header-menu {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	@media screen and (max-width: 991px) {
+		justify-content: flex-end;
+	}
+	@media screen and (max-width: 768px) {
+		position: absolute;
+		right: 0;
+		z-index: 0;
+		opacity: 0;
+		flex-direction: column;
+		transform: translateY(-50%);
+		transition: 0.2s linear all;
+		z-index: 2;
+		padding: 20px;
+		background: rgba($text-color, 0.8);
+		border-radius: 2px;
+		border: 1px solid $text-color;
+	}
+	.header-menu-item {
+		@media screen and (max-width: 991px) {
+			margin-left: 10px;
+		}
+		@media screen and (max-width: 768px) {
+			padding-bottom: 5px;
+		}
+		.header-menu-link {
+			font-size: 1.4rem;
+			color: $second-color;
+			font-weight: 200;
+			transition: 0.2s linear all;
+			@media screen and (max-width: 768px) {
+				font-size: 1.6rem;
+			}
+			&:hover {
+				color: $brand-color;
+			}
+		}
+	}
+}	
+
+
+.burger {
+	display: none;
+	margin-left: auto;
+	z-index: 5;
+	@media screen and (max-width: 768px) {
+		display: block;
+	    width: 40px;
+	    height: 35px;
+	    cursor: pointer;
+		position: relative;
+	    &:before, &:after {
+			content: '';
+			color: $brand-color;
+			background: $brand-color;
+			width: 30px;
+			height: 5px;
+			left: 5px;
+			position: absolute;
+			border-radius: 3px;
+			transform: rotate(0deg);
+			transition: transform .3s ease-out, box-shadow .2s ease-out;
+	    }
+	    &:before {
+			top: 5px;
+			box-shadow: 0 10px 0 0 $brand-color;
+			transform-origin: top left;
+	    }
+	    &:after {
+			bottom: 5px;
+			transform-origin: bottom left;
+	    }
+	    &.active {
+	    	&:before {
+				transform: rotate(45deg);
+				box-shadow: 0 0 0 0 $brand-color;
+	    	}
+	    	&:after {
+				transform: rotate(-45deg);
+	    	}
+
+	    	& + .header-menu {
+	    		transform: translateY(0);
+	    		z-index: 2;
+				opacity: 1;
+	    	}
+	    }
+	}
+}
+
+
+.main-nav {
+	margin-bottom: 60px;
+}
+.main-menu {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	justify-content: space-between;
+	@media screen and (max-width: 991px) {
+		flex-wrap: wrap;
+	}
+	.main-menu-item {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		&:not(:last-child) {
+			margin-right: 15px;
+			padding-right: 30px;
+			@media screen and (max-width: 991px) {
+				padding: 0;
+				margin: 0;
+			}
+			&:after {
+				position: absolute;
+				content: '';
+				top: 0;
+				left: 100%;
+				width: 1px;
+				height: 100%;
+				background: rgba($brand-color, 0.3);
+				@media screen and (max-width: 991px) {
+					top: auto;
+					bottom: 0;
+					height: 108%;
+				}
+			}
+		}
+		&:nth-child(3) {
+			@media screen and (max-width: 991px) {
+				&:after {
+					content: none;
+					@media screen and (max-width: 420px) {
+						content: ''; 
+					}
+				}
+			}
+		}
+		&:nth-child(2), &:nth-child(4) {
+			@media screen and (max-width: 420px) {
+				&:after {
+					content: none;
+				}
+			}
+		}
+		img {
+			max-width: 45px;
+			margin-right: 10px;
+			width: 100%;
+			max-height: 40px;
+			@media screen and (max-width: 640px) {
+				display: none;
+			}
+		}
+		.main-menu-link {
+			text-transform: uppercase;
+			color: $brand-color;
+			transition: 0.2s linear all;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			font-size: 1.8rem;
+			transition: 0.2s linear all;
+			text-decoration: none;
+			&:hover, &:active, &:focus {
+				color: $second-color;
+			}
+			span {
+				display: block;
+				@media screen and (max-width: 640px) {
+					text-align: center;
+				}
+				@media screen and (max-width: 480px) {
+					font-size: 1.6rem;
+				}
+			}
+		}
+		@media screen and (max-width: 991px) {
+			width: 33.33%;
+			margin: 0 0 5px !important;
+			padding: 0 0 5px !important;
+			&:before {
+				position: absolute;
+				content: '';
+				width: 100%;
+				height: 1px;
+				background: rgba($brand-color, 0.3);
+				top: 100%;
+				left: 0;
+			}
+		}
+		@media screen and (max-width: 420px) {
+			width: 50%;
+		}
+	}
+}

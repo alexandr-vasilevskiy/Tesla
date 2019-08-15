@@ -1,0 +1,86 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+  color: $brand-color;
+  text-decoration: none;
+
+  @include on-event {
+    color: $text-color;
+    text-decoration: none;
+  }
+}
+
+/**
+ * Basic styles for titles
+ */
+.h1 {
+	font-size: 4.7rem;
+	color: $second-color;
+	text-transform: uppercase;
+	line-height: 1.28;
+	font-weight: 700;
+	margin: 0 0 10px;
+	@media screen and (max-width: 480px) {
+		font-size: 3rem;
+	}
+}
+.h2 {
+	font-size: 3.6rem;
+	color: $text-color;
+	text-transform: uppercase;
+	font-weight: 500;
+	margin: 0 0 5px;
+	@media screen and (max-width: 480px) {
+		font-size: 2.5rem;
+	}
+}
+.h3 {
+	font-size: 3rem;
+	color: $second-color;
+	font-weight: 200;
+	text-transform: uppercase;
+	margin: 0 0 20px;
+	@media screen and (max-width: 480px) {
+		font-size: 2rem;
+	}
+}
+.h4 {
+	margin: 0 0 5px;
+	font-size: 1.8rem;
+	font-weight: 500;
+	color: $text-color;
+	text-transform: uppercase;
+}
+.h5 {
+	font-weight: 400;
+	font-size: 1.8rem;
+	margin: 0 0 5px;
+}
+
+img {
+  max-width: 100%
+}

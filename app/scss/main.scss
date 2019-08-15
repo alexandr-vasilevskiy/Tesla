@@ -1,0 +1,36 @@
+@charset 'UTF-8';
+
+// 1. Configuration and helpers
+@import
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins';
+
+// 2. Vendors
+@import
+  'vendors/bootstrap-grid',
+  'vendors/normalize';
+
+// 3. Base stuff
+@import
+  'base/base',
+  'base/fonts',
+  'base/typography',
+  'base/helpers';
+
+// 4. Layout-related sections
+@import
+  'layout/header',
+  'layout/navigation',
+  'layout/forms',
+  'layout/section-headers',
+  'layout/products-s',
+  'layout/constructor-s',
+  'layout/benefits-s',
+  'layout/divider-block';
+
+// 5. Components
+@import
+  'components/counter',
+  'components/checkbox',
+  'components/button';

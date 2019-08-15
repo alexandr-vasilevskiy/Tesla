@@ -1,0 +1,63 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the counter component.
+// -----------------------------------------------------------------------------
+
+.counter-wrapper {
+	margin: 20px 0 60px;
+	@media screen and (max-width: 480px) {
+		margin: 40px 0;
+	}
+	.title {
+		font-size: 1.6rem;
+		color: $brand-color;
+		font-weight: 500;
+		margin-bottom: 5px;
+		display: block;
+		@media screen and (max-width: 480px) {
+			text-align: center;
+		}
+	}
+	> div {
+		text-align: left !important;
+		@media screen and (max-width: 480px) {
+			text-align: center !important;
+			min-width: auto !important;
+		}
+		.timer-element {
+			text-align: center !important;
+			> * {
+				font-family: "pfdintext" !important;
+			}
+			@media screen and (max-width: 360px) {
+				> [id^="timer-number-"] {
+					font-size: 4rem !important;
+				}
+			}
+		}
+		.timer-separator {
+			color: transparent !important;
+			position: relative;
+			padding: 0px 15px !important;
+			&:before, &:after {
+				content: '';
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				top: 42%;
+				background: $second-color;
+				width: 6px;
+				height: 6px;
+				@media screen and (max-width: 480px) {
+					top: 30%;
+				}
+			}
+			&:after {
+				bottom: 20%;
+				top: auto;
+				@media screen and (max-width: 480px) {
+					bottom: 30%;
+				}
+			}
+		}
+	}
+}
